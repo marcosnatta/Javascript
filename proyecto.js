@@ -1,30 +1,27 @@
-let nombre = prompt("Bienvenido a prestanatta, ingrese su nombre por favor");
-while (nombre === "") {
-    alert("ingresa un nombre");
-    nombre = prompt("Bienvenido a prestanatta, ingrese su nombre por favor");
-    break;
+let nombre = prompt("ingrese su nombre")
+let edad = prompt("ingrese su edad")
+let prestamo = " "
+let cuotasPrestamo = " "
+if (nombre){
+    alert("bienvenido a prestamos.com" + " " + nombre)
 }
 
-let prestamo = parseInt(prompt("hola" + " " + nombre + " " + "ingrese el monto estimado para el prestamo"));
 
-let cuotasPrestamo = parseInt(prompt("ingrese cantidad de cuotas, hasta 12"))
-switch (prestamo) {
-    case prestamo:
-        console.log("haz elejido un prestamo de $" + prestamo)
-        break;
-        default:
-            console.log("tienes que elegir un prestamo")
+if(edad > 18){
+    alert("tienes edad para un prestamo")
+}else{
+    alert("no tienes edad para un prestamo")
+}
+;
+
+if (prestamo = parseInt(prompt("ingrese un monto a cotizar"))){
+    if (cuotasPrestamo = prompt("ingrese cantidad de cuotas"))
+    for (let i = 1; i <= 12; i++) {
+        let totalPrestamo = (prestamo / cuotasPrestamo) + 200;
+        alert( "$" + prestamo + " en " + cuotasPrestamo + " cuotas de" + " " + "$" + totalPrestamo);
+        if(i <= 12){
             break;
-}
-        
-        
-
-for (let i = 1; i <= 12; i++) {
-    let totalPrestamo = prestamo / cuotasPrestamo;
-    console.log( prestamo + " en " + cuotasPrestamo + " cuotas de" + " " + "$" + totalPrestamo);
-
-
-    if(i <= 12){
-        break;
+        }
     }
 }
+ alert("muchas gracias por elegirnos, vuelve pronto")
