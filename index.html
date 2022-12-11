@@ -1,15 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Consultorios clinicos privados economicos,turnos inmediatos amplia cobertura de obras sociales">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Consulnatta.com|consultorio economico con turnos rapidos</title>
+
 </head>
+
 <body>
-    <h1>Mi primer proyecto javascript</h1>
+    <!-- cabeza -->
+    <header class="navbar navbar-expand-lg bg- border">
+        <div class="container">
+
+            <a class="navbar-brand" href="./index.html"><img src="./assets/images/logo.jpg" alt="logo-barranavegacion" class="img-nav"></a>
+
+            <h1>Consulnatta</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse justify-content-end fs-5 fst-italic" id="navbarNav">
+
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./pages/Medicos.html">Medicos</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./pages/Especialidades.html">Especialidades</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./pages/Consultorios.html">Consultorios</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./pages/Contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- cuerpo definicion rapida y main sencillo -->
+    <main>
+        <section class="container">
+
+            <article>
+                <h2>Bienvenidos a <span>ConsulNatta</span></h2>
 
 
-    <script src="./proyecto.js"></script>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <p>Consulnatta es tu consultorio medico favorito, en el encontraras la asistencia medica que siempre buscaste, nuestros locales cuentan con medicos y empleados sumamente bien
+                            capacitados para que usted reciba una atencion como se merece, nuestros locales se encuentan en:  Merlo ( av libertador 455 ) , y en Caballito ( av libertador 455), a pocas cuadras de las estaciones, faciles de llegar, contamos con turnos inmediatos y a bajo costo, tambien contamos con amplia cobertura de obras sociales, si quiere reservar un turno puede hacerlo comunicandose via mail, llada, whatsapp o por nuestras redes sociales, te esperamos.
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div id="carousel-home" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./assets/images/img-carrusel-1.jpg" class="d-block w-100"
+                                        alt="consultoriofoto1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/images/img-carrusel-2.jpg" class="d-block w-100"
+                                        alt="consultoriofoto2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/images/img-carrusel-3.jpg" class="d-block w-100"
+                                        alt="consultoriofoto3">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/images/img-carrusel-4.jpg" class="d-block w-100"
+                                        alt="consultoriofoto4">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-home"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-home"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="container">
+
+        <h4>Mas Informacion Sobre Nosotros</h4>
+
+        <div>
+            <ul class="info">
+                <li>Direccion: av libertador 455, merlo, buenos aires, argentina </li>
+                <li>Mail: consulnatta@gmail.Com</li>
+                <li>Numero de telefono general: 11 34567899</li>
+            </ul>
+        </div>
+
+        <div class="click-aqui">
+            <ul>
+                <li>Si desea contactartse con nosotros</li>
+            </ul>
+            <div class="text-center">
+                <a href="./pages/Contacto.html">Hace Click Aqui</a>
+            </div>
+        </div>
+
+
+        <div>
+            <ul class="redes">
+                <li>
+                   <a href="https://www.facebook.com" target="_blank"><img src="./assets/images/facebook.png" alt="facebook" height="50px"></a> 
+
+                <li>
+                    <a href=" https://www.instagram.com" target="_blank"><img src="./assets/images/instagram.png" alt="instagram" height="65px"></a>
+                </li>
+
+                <li>
+                    <a href="https://twitter.com/?lang=es" target="_blank"> <img src="./assets/images/twitter.png" alt="twitter" height="50px"></a>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
+
+
+    <script src="./js/consultorio.js"></script>
+
 </body>
+
 </html>

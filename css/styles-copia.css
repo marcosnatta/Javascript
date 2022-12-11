@@ -1,0 +1,346 @@
+footer {
+    padding-bottom: 100px;
+  }
+  footer h4 {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: larger;
+    font-style: italic;
+    color: rgba(143, 75, 19, 0.63);
+    padding: 40px;
+  }
+  footer ul {
+    list-style: none;
+    font-size: large;
+    font-style: italic;
+    text-align: center;
+    line-height: 40px;
+  }
+  footer a {
+    padding: 10px;
+    color: rgb(201, 70, 70);
+    border-radius: 20px;
+    background: linear-gradient(lightblue, rgb(190, 190, 204));
+    transition-property: transform;
+    transition-duration: 1s;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+  }
+  footer a:hover {
+    color: rgb(117, 194, 164);
+    transform: rotate(360deg);
+  }
+  footer .redes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  footer .mapa {
+    padding: 40px;
+  }
+  
+  h1 {
+    color: rgb(240, 138, 138);
+    text-align: center;
+    padding: 10px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+  }
+  
+  .img-nav {
+    width: 65px;
+    border-radius: 10px;
+  }
+  
+  .navbar {
+    --bs-navbar-color:rgb(163, 130, 130);
+  }
+  
+  body {
+    background-color: rgb(212, 223, 235);
+  }
+  
+  article {
+    padding: 50px;
+  }
+  article h2 {
+    color: rgb(117, 194, 164);
+    font-weight: inherit;
+    font-style: italic;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(28, 140, 173);
+    padding-bottom: 50px;
+    text-align: center;
+  }
+  article span {
+    color: rgb(240, 138, 138);
+  }
+  article p {
+    text-align: center;
+    font-style: italic;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    line-height: 40px;
+  }
+  
+  @media (min-width: 500px) {
+    .mapa {
+      width: 440px;
+    }
+  }
+  @media (min-width: 768px) {
+    .mapa {
+      width: 690px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mapa {
+      width: 1100px;
+    }
+  }
+  .contenedor-especialidades {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(97, 80, 80);
+  }
+  .contenedor-especialidades h3 {
+    color: rgb(240, 138, 138);
+    text-decoration-line: underline;
+  }
+  
+  .especialidades {
+    font-style: italic;
+    padding: 40px;
+    color: rgb(240, 138, 138);
+    text-align: center;
+    text-decoration-line: underline;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .conoce-a-medicos {
+    padding: 10px;
+    width: 200px;
+    color: rgb(201, 70, 70);
+    border-radius: 20px;
+    background: linear-gradient(lightblue, rgb(190, 190, 204));
+    transition-property: transform;
+    transition-duration: 1s;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    text-decoration-line: none;
+  }
+  .conoce-a-medicos:hover {
+    color: rgb(117, 194, 164);
+    transform: rotate(360deg);
+  }
+  .conoce-a-medicos a {
+    color: rgba(65, 70, 75, 0.568627451);
+    text-decoration: none;
+  }
+  
+  .turnos {
+    border: solid;
+    border-radius: 50px;
+    padding: 40px;
+    background-color: rgb(193, 210, 212);
+    text-align: center;
+    font-size: large;
+    border: none;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    background-color: rgb(121, 150, 170);
+    justify-content: baseline;
+  }
+  .turnos:hover {
+    box-shadow: 0 5px 15px green;
+    transform: translateY(-15px);
+    background-color: rgb(185, 220, 185);
+  }
+  
+  @media (min-width: 500px) {
+    .mapa {
+      width: 440px;
+    }
+  }
+  @media (min-width: 768px) {
+    .mapa {
+      width: 690px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mapa {
+      width: 1100px;
+    }
+  }
+  @media (min-width: 768px) {
+    .contenedor-especialidades {
+      justify-content: center;
+    }
+  }
+  @media (min-width: 500px) {
+    .mapa {
+      width: 440px;
+    }
+  }
+  @media (min-width: 768px) {
+    .mapa {
+      width: 690px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mapa {
+      width: 1100px;
+    }
+  }
+  @media (min-width: 500px) {
+    h2 {
+      padding: 20px;
+      color: rgba(171, 110, 110, 0.46);
+      text-align: center;
+    }
+  }
+  @media (min-width: 768px) {
+    h2 {
+      padding: 40px;
+      color: rgba(13, 110, 253, 0.53);
+      text-align: center;
+      text-decoration-line: underline;
+      text-decoration-color: #bdbdbd;
+    }
+    .consul {
+      color: rgb(211, 24, 171);
+      text-decoration: none;
+      font-weight: bold;
+      font-style: italic;
+      padding-bottom: 80px;
+      text-align: center;
+    }
+    .texto-consul {
+      font-weight: bold;
+      color: rgba(167, 83, 83, 0.6196078431);
+      font-size: larger;
+    }
+  }
+  .doctores-items {
+    display: flex;
+    gap: 40px;
+  }
+  .doctores-items h2 {
+    color: rgb(179, 179, 52);
+  }
+  
+  .tarjetas-doctores {
+    border: solid;
+    border-radius: 50px;
+    padding: 40px;
+    background-color: rgb(193, 210, 212);
+    text-align: center;
+    font-size: x-large;
+    align-content: center;
+    align-items: baseline;
+  }
+  .tarjetas-doctores:hover {
+    box-shadow: 0 5px 15px rgb(99, 126, 99);
+    transform: translateY(-30px);
+  }
+  
+  .juana {
+    padding-top: 1px;
+  }
+  
+  @media (min-width: 500px) {
+    .mapa {
+      width: 440px;
+    }
+  }
+  @media (min-width: 768px) {
+    .mapa {
+      width: 690px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mapa {
+      width: 1100px;
+    }
+  }
+  @media (min-width: 500px) {
+    .doctores-items {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @media (min-width: 768px) {
+    .doctores-items {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @media (min-width: 1200px) {
+    .doctores-items {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  @media (min-width: 500px) {
+    p {
+      text-align: center;
+      font-size: larger;
+      font-weight: 600;
+      font-style: oblique;
+      color: rgba(100, 100, 155, 0.6509803922);
+    }
+    label {
+      font-size: large;
+      padding-bottom: 20px;
+      padding-top: 40px;
+      font-family: monospace;
+      display: flex;
+      justify-content: space-around;
+    }
+    input, textarea, select {
+      padding: 10px;
+      border-radius: 30px;
+      background-color: rgba(200, 200, 223, 0.8117647059);
+      font-size: larger;
+    }
+    .prueba {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media (min-width: 1200px) {
+    .prueba {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media (min-width: 500px) {
+    .mapa {
+      width: 440px;
+    }
+  }
+  @media (min-width: 768px) {
+    .mapa {
+      width: 690px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mapa {
+      width: 1100px;
+    }
+  }
+  
+  /*# sourceMappingURL=style.css.map */
+  
