@@ -55,7 +55,7 @@
                 <h2>Bienvenidos a <span>ConsulNatta</span></h2>
 
 
-                <div class="row">
+                <div class="row ">
                     <div class="col-12 col-lg-6">
                         <p>Consulnatta es tu consultorio medico favorito, en el encontraras la asistencia medica que siempre buscaste, nuestros locales cuentan con medicos y empleados sumamente bien
                             capacitados para que usted reciba una atencion como se merece, nuestros locales se encuentan en:  Merlo ( av libertador 455 ) , y en Caballito ( av libertador 455), a pocas cuadras de las estaciones, faciles de llegar, contamos con turnos inmediatos y a bajo costo, tambien contamos con amplia cobertura de obras sociales, si quiere reservar un turno puede hacerlo comunicandose via mail, llada, whatsapp o por nuestras redes sociales, te esperamos.
@@ -99,9 +99,42 @@
         </section>
     </main>
 
-    <!-- footer -->
-    <footer class="container">
 
+    <div class="text-center">
+        <span>Si desea sacar un turno registrese aqui abajo:</span>
+    </div>
+
+    <form id= "formulario"  action="/redirreccion">
+    
+        <div class="prueba pb-5">
+
+            <label for="mail">*Ingrese su mail:</label>
+            <input type="email" id="correo" placeholder="ej: hola@gmail.com">
+        </div>
+
+
+        <div class="text-center pb-5">
+            <span>*Ingrese su contraseña:</span>
+
+
+        <div id= "contraseña" class="imputPassword text-center pt-4">
+
+        </div>
+
+        <div id="enviar" class="pt-3"></div>
+
+        </div>
+
+
+
+
+    </form>
+    
+    
+    <!-- footer -->
+ 
+    <footer class="container">
+        
         <h4>Mas Informacion Sobre Nosotros</h4>
 
         <div>
@@ -110,15 +143,6 @@
                 <li>Mail: consulnatta@gmail.Com</li>
                 <li>Numero de telefono general: 11 34567899</li>
             </ul>
-        </div>
-
-        <div class="click-aqui">
-            <ul>
-                <li>Si desea contactartse con nosotros</li>
-            </ul>
-            <div class="text-center">
-                <a href="./pages/Contacto.html">Hace Click Aqui</a>
-            </div>
         </div>
 
 
@@ -139,9 +163,9 @@
 
     </footer>
 
-
     <script src="./js/consultorio.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+/*
 // VARIABLES COMUNES
 let nombres = prompt("introduce tu nombre")
 let edades = Number(prompt("introduce tu edad"))
@@ -70,3 +71,64 @@ console.log(TotalEspecialidades)
 const Especialidades = [`cardiologia`, `urologia`, `nefrologia`]
 Especialidades.splice(1,2)
 console.log(Especialidades)
+*/     
+
+
+
+
+
+
+//borrar etiquetas que no usare para esta entrega
+
+let eliminarFooter = document.querySelector("footer")
+eliminarFooter.remove()
+
+
+// input para correo y contraseña
+
+let input = document.createElement("input")
+input.innerText = "ingrese su contraseña"
+input.setAttribute("type","password")
+input.setAttribute("id", "contraseñausuario")
+document.querySelector("#contraseña").appendChild(input)
+
+
+// crear un boton para enviar informacion
+
+let botonEnviar = document.createElement("button")
+botonEnviar.setAttribute("class","btn btn-info")
+botonEnviar.setAttribute("id","enviado")
+botonEnviar.textContent = "Enviar Registro"
+document.querySelector("#enviar").appendChild(botonEnviar);
+
+const mail = document.querySelector("#correo")
+
+const contraseña = document.querySelector("#contraseña");
+
+
+formulario.addEventListener("submit",validacion);
+function validacion(e) {
+    e.preventDefault()
+    //console.log(`Mail: ${correo.value}`)
+    //console.log(`Contraseña: ${contraseña.value}`)
+    // ----------------- evento de que el formulario se envio ------------
+}
+
+
+// guardar mail y contraseña en local storage
+
+
+document.getElementById("enviar").addEventListener(`click`,function(){
+    Swal.fire(
+        'Gracias por registrarte',
+        'Te enviaremos un mail para asesorarte',
+        'success'
+      )
+    let mailUsuario = document.getElementById(`correo`).value;
+    let passUsuario = document.getElementById(`contraseñausuario`).value;
+    localStorage.setItem(mailUsuario,passUsuario);
+   
+    
+})
+ 
+// los obejtos y variables comentados mas arriba son para la entrega final, para lo que tengo planeado hacer
