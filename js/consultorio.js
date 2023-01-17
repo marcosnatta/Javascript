@@ -1,87 +1,60 @@
-/*
-// VARIABLES COMUNES
-let nombres = prompt("introduce tu nombre")
-let edades = Number(prompt("introduce tu edad"))
 
+document.getElementById("datos-validacion").addEventListener(`click`,function(){
+    let nombres = document.getElementById("nombre").value;
+    let edades = document.getElementById("edad").value;
 
-// FUNCION
-function hola(nombre = nombres, edad = edades) {
-    console.log(`Bienvedido a consulnatta ${nombre}, tu edad de ${edad} años es suficiente para atenderte en nuestros consultorios, adelante`)    
-}
+    localStorage.setItem(nombres,edades);
 
-while (edades <= 18 ) {
-    alert("solo antendemos a mayores de 18 años, ingresaste la edad de:" + " " +  edades);
-    edades = Number(prompt("ingresa otra edad para continuar"));
-}
+    function hola(nombre = nombres, edad = edades) {
+        if(edad <= 18 || nombre === ""){
+            swal.fire({
+                text:"No introduciste un nombre valido o tu edad no es suficiente para acceder (+18)",
+                showConfirmButton: false,
+            })
+            
+        } 
+        else {
+            swal.fire({
+                text:`Bienvedido a consulnatta ${nombre}, tu edad de ${edad} años es suficiente para atenderte en nuestros consultorios, adelante`,
+                icon: "success",
+                confirmButtonText: "continuar",
+        })
 
-hola()
+        .then(async() => {
+            const inputOptions = new Promise((resolve) => {
+                setTimeout(() => {
+                  resolve({
+                    MERLO: "MERLO",
+                    CABALLITO:"CABALLITO",
+                  })
+                }, 10)
+              })
+              
+              
 
-let Consulss = prompt("tenemos 2 consultorios para ofrecerte, selecciona numero 1, para consulnatta MERLO, o numero 2 para consulnatta CABALLITO")
-switch (Consulss) {
-    case "1":
-        alert("Elegiste consulnatta MERLO")
-        break;     
-        case "2":
-        alert("Elegiste consulnatta CABALLITO")
-        }
-// OBJETOS (CONSULTORIOS)
-        
-        class consulnatta{
-            constructor(nombre, localidad, calle){
-                this.nombre = nombre;
-                this.localidad = localidad;
-                this.calle = calle;
-            }
-            presentacion(){
-                console.log("Hola te presentamos al consultorio" + this.nombre, this.calle);
-            }
-        }
-        const consulnattamerlo = new consulnatta("Consulnatta-MERLO", "Merlo", "av libertador 455");
-        const consulnattacaballito = new consulnatta("Consulnatta-CABALLITO", "Caballito", "av libertador 455");
+              const { value: sucursales } = await Swal.fire({
+                title: 'Selecciona una sucursal',
+                input: 'radio',
+                inputPlaceholder: 'sucursal',
+                inputOptions: inputOptions,
 
-switch (Consulss) {
-    case "1":
-        console.log(consulnattamerlo.presentacion());
-
-        break;  
-        case "2":
-        console.log(consulnattacaballito.presentacion());
-        
-        break;
-        }
-
-// ARRAYS
-
-class PrecioConsultas{
-    constructor(especialidad, precio){
-        this.especialidad = especialidad
-        this.precio = precio
+                inputValidator: (value) => {
+                  if (!value) {
+                    return 'tienes que elegir una sucursal'
+                  }
+                }
+              })
+              
+              if (sucursales) {
+                Swal.fire({title: `Elegiste sucursal:${sucursales}` })
+              }
+          });
+          
+        }         
     }
-    TotalPrecio(){
-        this.total = this.especialidad + this.precio
-    }
-}
-const TotalEspecialidades = [];
-TotalEspecialidades.push(new PrecioConsultas("cardiologia", "$3500"))
-TotalEspecialidades.push(new PrecioConsultas("urologia", "$2500"))
-TotalEspecialidades.push(new PrecioConsultas("nefrologia", "$4000"))
+    hola()
+})
 
-console.log(TotalEspecialidades)
-// METODO SIMPLE PARA ESTE CASO
-const Especialidades = [`cardiologia`, `urologia`, `nefrologia`]
-Especialidades.splice(1,2)
-console.log(Especialidades)
-*/     
-
-
-
-
-
-
-//borrar etiquetas que no usare para esta entrega
-
-let eliminarFooter = document.querySelector("footer")
-eliminarFooter.remove()
 
 
 // input para correo y contraseña
@@ -119,16 +92,204 @@ function validacion(e) {
 
 
 document.getElementById("enviar").addEventListener(`click`,function(){
+  
     Swal.fire(
         'Gracias por registrarte',
-        'Te enviaremos un mail para asesorarte',
+        '',
         'success'
       )
+      
     let mailUsuario = document.getElementById(`correo`).value;
     let passUsuario = document.getElementById(`contraseñausuario`).value;
     localStorage.setItem(mailUsuario,passUsuario);
-   
+ 
+    if (passUsuario === "") {
+    Swal.fire(
+      'ERROR EN VALIDACION',
+      'el espacio de "contraseña" no puede estar vacio  ',
+      'error'
+    )}
     
 })
+
+// CARRO DE RESERVAS (misma forma que el carrito  )
+
+const DatosReserva = [
+  {
+      id: 1,
+      nombre: 'Reserva cardiologia',
+      precio: 3500,   
+      imagen: `./assets/images/doctora-carla.jpg`,
+  },
+  {
+      id: 2,
+      nombre: 'Reserva urologia',
+      precio: 2500,
+      imagen: `./assets/images/doctora-diaz.jpg`,
+  },
+  {
+      id: 3,
+      nombre: 'Reserva nefrologia ',
+      precio: 4000,
+      imagen: `./assets/images/doctor-carlos.jpg`,
+  },
  
-// los obejtos y variables comentados mas arriba son para la entrega final, para lo que tengo planeado hacer
+];
+
+
+let carrito = [];
+const pesos = '$';
+const items = document.querySelector('#items');
+const carrito2 = document.querySelector('#carrito');
+const total = document.querySelector('#total');
+const botonVaciar = document.querySelector('#boton-vaciar');
+const localstorage = localStorage;
+const reservaFinal = document.querySelector(`#boton-reservar`);
+
+function verProductos() {
+  DatosReserva.forEach((info) => {
+
+      const DivTarjeta = document.createElement('div');
+
+      DivTarjeta.classList.add('card', 'row-sm-3');
+
+      const tarjeta = document.createElement('div');
+
+      tarjeta.classList.add('card-body');
+  
+      const titulo = document.createElement('h5');
+
+      titulo.classList.add('card-title');
+      titulo.textContent = info.nombre;
+
+
+
+     
+      const Imagen = document.createElement('img');
+      Imagen.classList.add('img-fluid');
+      Imagen.setAttribute('src', info.imagen);
+      
+      const miPrecio = document.createElement('p');
+      miPrecio.classList.add('card-text');
+      miPrecio.textContent = `${info.precio}${pesos}`;
+
+
+
+      
+      //crear boton para comprar
+
+
+      const reservaBoton = document.createElement('button')
+      reservaBoton.classList.add('btn', 'btn-primary');
+      reservaBoton.textContent = 'quiero mi turno';
+      reservaBoton.setAttribute('marcador', info.id);
+      reservaBoton.addEventListener('click', agregarProductoAlCarrito);
+
+
+      tarjeta.appendChild(Imagen);
+      tarjeta.appendChild(titulo);
+      tarjeta.appendChild(miPrecio);
+      tarjeta.appendChild(reservaBoton);
+      DivTarjeta.appendChild(tarjeta);
+      items.appendChild(DivTarjeta);
+  });
+}
+
+//  agregar un item al carrito de la compra
+function agregarProductoAlCarrito(evento) {
+  
+  carrito.push(evento.target.getAttribute('marcador'))
+
+  verCarrito();
+
+  guardarcarrolocalstorage()
+
+}
+
+function verCarrito() {
+  
+  carrito2.textContent = '';
+  
+  const carritoSinDuplicados = [...new Set(carrito)];
+    carritoSinDuplicados.forEach((item) => {
+
+      const reserva = DatosReserva.filter((itemBaseDatos) => {
+
+          
+          return itemBaseDatos.id === parseInt(item);
+      });
+      
+      const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+          return itemId === item ? total += 1 : total;
+      }, 0);
+    
+      const lista = document.createElement('li');
+      lista.classList.add('list-group-item', 'text-right', 'mx-2');
+      lista.textContent = `${numeroUnidadesItem} x ${reserva[0].nombre} - ${reserva[0].precio}${pesos}`;
+
+      
+      carrito2.appendChild(lista);
+  });
+
+  total.textContent = calcularTotal();
+}
+
+
+/*Calcula el precio total teniendo en cuenta los productos repetidos*/
+function calcularTotal() {
+
+  return carrito.reduce((total, item) => {
+      
+      const reserva = DatosReserva.filter((itemBaseDatos) => {
+          return itemBaseDatos.id === parseInt(item);
+      });
+      
+      return total + reserva[0].precio;
+  }, 0).toFixed(2);
+}
+
+// vaciar el carro
+function vaciarCarrito() {
+  carrito = [];
+ 
+  verCarrito();
+
+  localStorage.clear()
+}
+
+// reserva completada (simple)
+
+
+
+reservaFinal.addEventListener(`click`, function(){
+  Swal.fire({
+    title: '¿Seguro que quiere esta reserva?',
+    text: "una vez confirmado ya no podra anularse ",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, reservo'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        ' Felicidades',
+        'su reserva se realizo con exito, en las 24 horas habiles recibira un mail para poder pagar',
+        'success'
+      )
+    }
+  })
+ 
+})
+// guardar carro en local storage 
+function guardarcarrolocalstorage () {
+  localstorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+
+
+botonVaciar.addEventListener('click', vaciarCarrito);
+
+
+verProductos();
+verCarrito();

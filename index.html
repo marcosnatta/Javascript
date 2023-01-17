@@ -94,15 +94,34 @@
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>          
+
+                <div>
+                    <h2>VALIDACION DE INGRESO</h2>
+                    <p>Para acceder a nuestras prestaciones debes completar los datos necesarios a continuacion</p>
+
+                        <div  class="text-center" >
+                          <label for="validationCustom01" >NOMBRE y APELLIDO</label>
+                          <input type="text" id="nombre" >
+                        </div>
+                
+                         <div class="text-center p-3">                   
+                          <label for="validationCustom03" >EDAD</label>
+                          <input type="text" id= "edad" >
+                        </div>
+
+
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-warning"  id="datos-validacion">Validacion</button>
+                    </div>
+
+                    
+
+
             </article>
         </section>
-    </main>
 
-
-    <div class="text-center">
-        <span>Si desea sacar un turno registrese aqui abajo:</span>
-    </div>
 
     <form id= "formulario"  action="/redirreccion">
     
@@ -124,45 +143,37 @@
         <div id="enviar" class="pt-3"></div>
 
         </div>
-
-
-
-
     </form>
-    
-    
-    <!-- footer -->
- 
-    <footer class="container">
+
+    <div>
+        <h2>RESERVAS</h2>
+        <P>Una vez se haya registrado, seleccione y abone su reserva aqui abajo </P>
+    </div>
+    <div class="container">
+        <div class="row">
         
-        <h4>Mas Informacion Sobre Nosotros</h4>
+            <main id="items" class="col-sm-8 row"></main>
+           
+            
+            <aside class="col-sm-4">
 
-        <div>
-            <ul class="info">
-                <li>Direccion: av libertador 455, merlo, buenos aires, argentina </li>
-                <li>Mail: consulnatta@gmail.Com</li>
-                <li>Numero de telefono general: 11 34567899</li>
-            </ul>
+                <p >Tus reservas se muestran aqui abajo</p>
+               
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                
+
+                <p class="text-right">Total: <span id="total"></span>$</p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                <button id="boton-reservar" class="btn btn-info">reservar</button>
+            </aside>
         </div>
+    </div>
 
 
-        <div>
-            <ul class="redes">
-                <li>
-                   <a href="https://www.facebook.com" target="_blank"><img src="./assets/images/facebook.png" alt="facebook" height="50px"></a> 
 
-                <li>
-                    <a href=" https://www.instagram.com" target="_blank"><img src="./assets/images/instagram.png" alt="instagram" height="65px"></a>
-                </li>
 
-                <li>
-                    <a href="https://twitter.com/?lang=es" target="_blank"> <img src="./assets/images/twitter.png" alt="twitter" height="50px"></a>
-                </li>
-            </ul>
-        </div>
-
-    </footer>
-
+    </main>
     <script src="./js/consultorio.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
